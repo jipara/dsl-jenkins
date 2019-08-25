@@ -5,10 +5,18 @@ pipeline{
             steps{
                 sh '''
                 set +xe
-                ech Hello
+                echo Hello 
+                ech Error
                 sudo yum install httpd -y
                 ping -c 4 google.com
                 '''
+            }
+        }
+        stage("Download Terraform "){
+            steps{
+                ws("/tmp"){
+                    sh "pwd"
+                }
             }
         }
     }
