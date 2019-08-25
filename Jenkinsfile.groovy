@@ -5,8 +5,8 @@ pipeline{
             steps{
                 sh '''
                 set +xe
-                echo Hello 
-                ech Error
+                echo Hello
+                ech  Error
                 sudo yum install httpd wget unzip -y
                 ping -c 4 google.com
                 '''
@@ -35,6 +35,7 @@ pipeline{
             steps{
                 ws("tmp/"){
                     writeFile text: "Test", file: "TestFile"
+                    sh "cat TestFile"
                 }
             }
         }
@@ -57,12 +58,5 @@ pipeline{
                 }
             }
         }
-        stage("Write to a file"){
-            steps{
-                ws("tmp/"){
-                    writeFile text: "Test", file: "TestFile"
-                }
-            }
-        }    
     }
-}   
+}
