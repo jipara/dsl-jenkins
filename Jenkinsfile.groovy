@@ -71,7 +71,7 @@ pipeline{
     }
     post{
       success {
-          mail to:  zhypargul.esengulova@gmail.com, subject: “job”, body: “job completed"
+          mail to:  "zhypargul.esengulova@gmail.com", subject: "job", body: "job completed"
         }
     }    
 }
