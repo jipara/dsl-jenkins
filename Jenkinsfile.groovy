@@ -57,11 +57,17 @@ pipeline{
                     }
                 }
             }
+        }
             stage("Pull repo"){
                 steps{
                     git("https://github.com/jipara/packerde.git")
                     sh "ls"
                 }
+        }
+        
+        stage("Build Image"){
+            steps{
+                sh "packera build update/update.json"
             }
         }
     }
