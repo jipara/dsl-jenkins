@@ -71,6 +71,9 @@ pipeline{
     }
     post{
       success {
+          echo "Done"
+      }
+      failure {
           mail to:  "zhypargul.esengulova@gmail.com", subject: "job", body: "job completed"
         }
     }    
