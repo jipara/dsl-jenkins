@@ -1,4 +1,4 @@
-pipelene{
+pipeline{
     agent any
     stages{
         stage("Run Command"){
