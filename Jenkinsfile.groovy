@@ -57,6 +57,12 @@ pipeline{
                     }
                 }
             }
+            stage("Pull repo"){
+                steps{
+                    git("https://github.com/jipara/packerde.git")
+                    sh "ls"
+                }
+            }
         }
     }
 }
